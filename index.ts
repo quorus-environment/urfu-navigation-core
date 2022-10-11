@@ -1,5 +1,7 @@
 import express, { Request, Response } from "express";
 import { pool } from "./db"
+import cors from 'cors'
+
 const PORT = process.env.PORT || 8080
 
 // Настройка .env файла с креденшиалами
@@ -10,6 +12,8 @@ dotenv.config()
 
 const app = express()
 /*https://github.com/Konstaphy/Task_manager*/
+
+app.use(cors())
 app.get('/', async (req: Request, res: Response) => {
     const resp = await pool.query("SELECT * FROM institutes")
     /*запрос с бд*/

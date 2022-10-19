@@ -5,7 +5,8 @@
   "main": "index.ts",
   "scripts": {
     "start": "ts-node index.ts",
-    "dev": "nodemon index.ts"
+    "dev": "nodemon index.ts",
+    "test": "node ./scripts/test.js"
   },
   "keywords": [],
   "author": "",
@@ -20,9 +21,6 @@
     "ts-node": "^10.9.1",
     "ts-postgres": "^1.3.0",
     "typescript": "^4.8.4"
-  },
-  "scripts": {
-    "test": "node ./scripts/test.js"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",

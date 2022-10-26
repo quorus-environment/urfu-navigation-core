@@ -1,0 +1,11 @@
+Graph[] = [
+  {
+    neighbours: Graph[];
+    coordinates: {x: number; y: number};
+    destination: "corridor" | "audothorium"
+                          | "turnover" | "ladder";
+    id: string;
+    moduleId: string;
+    isFilled: boolean;
+  }
+]

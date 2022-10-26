@@ -1,11 +1,11 @@
-const routes = new Map();
-const queue = [];
+let routes = new Map();
+let queue = [];
 
 function GetResultRoute(startPointID, endPointID){
     let currentId = endPointID;
     const resultRoute = [currentId];
     while (currentId !== startPointID){
-        currentId === routes.get();
+        currentId = routes.get(currentId);
         resultRoute.unshift(currentId);
     }
     return resultRoute;
@@ -46,8 +46,10 @@ function Initialization(graph, startPointID, endPointID) {
         return queue;
     }
     queue.push(graph.findIndex(item => item.id === startPointID));
-    return BreadthSearch(graph, startPointID, endPointID, routes, queue);
+    return BreadthSearch(graph, startPointID, endPointID);
 }
+
+module.exports = Initialization
 
 
 

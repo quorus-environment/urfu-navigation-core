@@ -46,6 +46,7 @@ function GetResultRoute(startPointID: string, endPointID: string): Array<string>
 }
 
 
+
 function BreadthSearch(graph: Array<Node>, startPointID: string, endPointID: string): Array<string> {
     if (queue.length === 0) {
         return [];

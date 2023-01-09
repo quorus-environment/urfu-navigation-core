@@ -6,6 +6,6 @@ export const pool = new pg.Pool({
     user: process.env.DB_USER,
     password: process.env.DB_PASS,
     host: "89.108.81.160",
-    port: 5432,
+    port: 8000,
     database: process.env.DB_NAME
 })

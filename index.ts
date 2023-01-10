@@ -17,7 +17,7 @@ app.use(cors())
 app.get('/', async (req: Request, res: Response) => {
     // const resp = await pool.query("SELECT * FROM institutes")
     /*запрос с бд*/
-    res.json("проверка #1")
+    res.json("проверка #2")
     /*send в виде JSON "res.json()"*/
 })
 /*app.use(express.json)

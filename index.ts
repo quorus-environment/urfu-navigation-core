@@ -6,7 +6,7 @@ import cors from 'cors'
 // Настройка .env файла с креденшиалами
 import * as dotenv from 'dotenv'
 dotenv.config()
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 8123
 
 /*const userRouter = require('./routes/user.routes')*/
 
@@ -17,7 +17,7 @@ app.use(cors())
 app.get('/', async (req: Request, res: Response) => {
     // const resp = await pool.query("SELECT * FROM institutes")
     /*запрос с бд*/
-    res.json("проверка")
+    res.json("проверочный тест")
     /*send в виде JSON "res.json()"*/
 })
 /*app.use(express.json)

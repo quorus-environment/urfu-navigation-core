@@ -17,6 +17,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.1",
     "pg": "^8.8.0",
+    "sequelize": "^6.30.0",
     "ts-node": "^10.9.1",
     "ts-postgres": "^1.3.0",
     "typescript": "^4.8.4"

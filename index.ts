@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { pool } from "./db"
+
 import cors from 'cors'
 
 const PORT = process.env.PORT || 8080
@@ -15,9 +15,8 @@ const app = express()
 
 app.use(cors())
 app.get('/', async (req: Request, res: Response) => {
-    const resp = await pool.query("SELECT * FROM institutes")
     /*запрос с бд*/
-    res.json(resp.rows)
+    res.json()
     /*send в виде JSON "res.json()"*/
 })
 /*app.use(express.json)

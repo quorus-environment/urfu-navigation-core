@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="NavigatorDB@localhost">
-  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.43">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.48">
     <root id="1"/>
     <database id="2" parent="1" name="InstitutesDB">
       <ObjectId>24576</ObjectId>
@@ -3456,20 +3456,20 @@
       <OwnerName>postgres</OwnerName>
     </table>
     <column id="265" parent="264" name="instid">
-      <DataType>uuid|0s</DataType>
+      <DasType>uuid|0s</DasType>
       <Position>1</Position>
       <StateNumber>738</StateNumber>
       <TypeId>2950</TypeId>
     </column>
     <column id="266" parent="264" name="instname">
-      <DataType>varchar(128)|0s</DataType>
+      <DasType>varchar(128)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>738</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="267" parent="264" name="photourl">
-      <DataType>varchar(256)|0s</DataType>
+      <DasType>varchar(256)|0s</DasType>
       <Position>3</Position>
       <StateNumber>738</StateNumber>
       <TypeId>1043</TypeId>

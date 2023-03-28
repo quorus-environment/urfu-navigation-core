@@ -6,6 +6,8 @@ import { Institute } from "./model/institutes"
 import { Section } from "./model/section"
 import { Floor } from "./model/floor"
 import { Auditorium } from "./model/auditorium"
+import { instituteRouter } from "./routes/institute-router"
+import { auditoriumRouter } from "./routes/auditorium-router"
 
 // defining config
 const PORT = process.env.PORT || 8080
@@ -25,10 +27,8 @@ const syncModel = async () => {
   await Auditorium.sync()
 }
 
-app.get("/", async (req: Request, res: Response) => {
-  const inst = await Institute.findOne()
-  res.json({ institute: inst?.id })
-})
+app.use("/institutes", instituteRouter)
+app.use("/auditoriums", auditoriumRouter)
 
 app.listen(PORT, async () => {
   await syncModel()

@@ -1,7 +1,12 @@
 import { DataTypes, Model } from "sequelize"
 import { seq } from "./db"
 
-export class Auditorium extends Model {}
+export class Auditorium extends Model {
+  declare id: string
+  declare title: string
+  declare destination: string
+  declare coordinates: [number, number][]
+}
 Auditorium.init(
   {
     id: {

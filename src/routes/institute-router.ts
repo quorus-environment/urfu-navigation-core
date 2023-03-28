@@ -1,5 +1,5 @@
 import express, { Response } from "express"
-import { Institute } from "../model/institutes"
+import { Institute } from "../model/navigation/institutes"
 
 export const instituteRouter = express.Router()
 

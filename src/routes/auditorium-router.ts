@@ -1,5 +1,5 @@
 import express, { Response } from "express"
-import { Auditorium } from "../model/auditorium"
+import { Auditorium } from "../model/navigation/auditorium"
 
 export const auditoriumRouter = express.Router()
 

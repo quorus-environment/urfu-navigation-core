@@ -1,5 +1,5 @@
 import { DataTypes, Model } from "sequelize"
-import { seq } from "./db"
+import { seq } from "../db"
 
 export class Floor extends Model {}
 Floor.init(

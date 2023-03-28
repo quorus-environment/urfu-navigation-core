@@ -1,11 +1,18 @@
-import {DataTypes, Model, Sequelize} from "sequelize";
+import { DataTypes, Model } from "sequelize"
+import { seq } from "./db"
 
-export const seq = new Sequelize('urfu','postgres','p123p123p123',{host:'194.67.103.130', dialect:'postgres'})
-
-class Institute extends Model {}
-Institute.init({
-    id: {type: DataTypes.STRING, primaryKey: true},
-    name: DataTypes.STRING
-}, {sequelize: seq})
-
-Institute.sync()
+export class Institute extends Model {
+  declare id: string
+  declare name: string
+}
+Institute.init(
+  {
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true,
+    },
+    name: DataTypes.STRING,
+  },
+  { sequelize: seq },
+)

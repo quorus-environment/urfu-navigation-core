@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="navigatordb@89.108.81.160" uuid="ef00096c-a023-4117-b487-83c9c6e896c1">
+    <data-source source="LOCAL" name="Urfu-prod" uuid="95ba7413-e9c7-40de-881f-e315cd84a7b6">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://89.108.81.160:5432/navigatordb</jdbc-url>
+      <jdbc-url>jdbc:postgresql://194.67.103.130:5432/urfu</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

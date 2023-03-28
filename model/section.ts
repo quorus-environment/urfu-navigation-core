@@ -1,8 +1,14 @@
-import {DataTypes, Model} from "sequelize";
-import {seq} from "./institutes";
+import { DataTypes, Model } from "sequelize"
+import { seq } from "./db"
 
-class Section extends Model{}
+export class Section extends Model {}
 
-Section.init({id: {type: DataTypes.STRING, primaryKey: true}, coridor: DataTypes.ARRAY},{sequelize: seq})
+Section.init(
+  {
+    id: { type: DataTypes.STRING, primaryKey: true },
+    coridor: DataTypes.ARRAY(DataTypes.ARRAY(DataTypes.DECIMAL)),
+  },
+  { sequelize: seq },
+)
 
 Section.sync()

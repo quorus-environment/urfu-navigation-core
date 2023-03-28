@@ -1,25 +1,36 @@
-import express, { Request, Response } from "express";
+import express, { Request, Response } from "express"
+import * as dotenv from "dotenv"
+import cors from "cors"
+import { seq } from "./model/db"
+import { Institute } from "./model/institutes"
+import { Section } from "./model/section"
+import { Floor } from "./model/floor"
+import { Auditorium } from "./model/auditorium"
 
-import cors from 'cors'
-
+// defining config
 const PORT = process.env.PORT || 8080
-
-// Настройка .env файла с креденшиалами
-import * as dotenv from 'dotenv'
 dotenv.config()
 
-/*const userRouter = require('./routes/user.routes')*/
-
 const app = express()
-/*https://github.com/Konstaphy/Task_manager*/
 
+// settings
 app.use(cors())
-app.get('/', async (req: Request, res: Response) => {
-    /*запрос с бд*/
-    res.json()
-    /*send в виде JSON "res.json()"*/
-})
-/*app.use(express.json)
-app.use('/api', userRouter)*/
 
-app.listen(PORT, () => console.log(`server started on post ${PORT}`))
+// sync models with db
+const syncModel = async () => {
+  await seq.sync()
+  await Institute.sync()
+  await Section.sync()
+  await Floor.sync()
+  await Auditorium.sync()
+}
+
+app.get("/", async (req: Request, res: Response) => {
+  const inst = await Institute.findOne()
+  res.json({ institute: inst?.id })
+})
+
+app.listen(PORT, async () => {
+  await syncModel()
+  console.log(`server started on post ${PORT}`)
+})

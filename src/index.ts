@@ -19,7 +19,7 @@ const app = express()
 
 // settings
 app.use(cors())
-
+app.use(express.json())
 // sync models with db
 const syncModel = async () => {
   await seq.sync()

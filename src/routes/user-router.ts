@@ -20,9 +20,10 @@ userRouter.get("/refresh", (req, res) => {
   res.json({ accessToken: newToken, id: data.id })
 })
 
-userRouter.get(
+userRouter.post(
   "/sign-in",
   async (req: Request<{ username: string; password: string }>, res) => {
+    console.log(req.body)
     const { username, password } = req.body
     if (!username || !password) {
       return res.status(401).send("Unauthorized")
@@ -39,7 +40,7 @@ userRouter.get(
     res.json({ accessToken: newToken, id: data?.id })
   },
 )
-userRouter.get("/sign-up", async (req: Request, res) => {
+userRouter.post("/sign-up", async (req: Request, res) => {
   const { username, password, email } = req.body
   if (!username || !password) {
     return res.status(401).send("Unauthorized")
